@@ -1,14 +1,11 @@
 import { type BoxProps } from "../../data";
 
-const Box = ({ children, value, onChange }: BoxProps) => {
-  const prevent = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-  };
+const Box = ({ children, ...props }: BoxProps) => {
   return (
-    <form onSubmit={prevent}>
+    <div className="form">
       <label>{children}</label>
-      <input type="number" required min={0} value={value} onChange={onChange} />
-    </form>
+      <input type="number" required min={0} {...props} />
+    </div>
   );
 };
 

@@ -1,31 +1,40 @@
 import type { ReactNode } from "react";
 
-export interface BoxProps extends React.InputHTMLAttributes<HTMLInputElement> {
-  value?: number;
+type InputAttributes = React.InputHTMLAttributes<HTMLInputElement>;
+
+//@ BillProps / LeftSide
+export interface BillProps extends InputAttributes {
+  bill: number;
+}
+//@ SelectTipProps / LeftSide
+export interface SelectTipProps extends InputAttributes {
+  tip: number;
+  onHandleTip: (arg: string) => void;
+}
+//@ NumberOfPeople / LeftSide
+export interface NumberOfPeopleProps extends InputAttributes {
+  numPeople: number;
+}
+//@ LeftSide / RightSide
+export interface Side {
   children: ReactNode;
 }
 
-export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  children: ReactNode;
-}
-
-export interface RightSideProps {
-  children: ReactNode;
-}
-
+//@ InfoProps / Global
 export interface InfoProps {
   price?: string | number;
   children: ReactNode;
 }
-
-export interface LeftSideProps {
+//@ BoxProps / Global
+export interface BoxProps extends InputAttributes {
   children: ReactNode;
 }
-
-export interface SelectTipProps extends React.InputHTMLAttributes<HTMLInputElement> {
-  tip: number;
-  onHandleTip: (arg: string) => void;
+//@ ButtonProps / Global
+export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  children: ReactNode;
 }
-
 // DATA
 export const SPLIT_OPTIONS: string[] = ["5%", "10%", "15%", "25%", "50%"];
+export const MAX_BILL: number = 10000;
+export const MAX_TIP: number = 100;
+export const MAX_PEOPLE: number = 10;

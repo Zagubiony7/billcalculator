@@ -1,6 +1,6 @@
 import { SPLIT_OPTIONS, type SelectTipProps } from "../../data";
 import { MyButton } from "../global/MyButton";
-const SelectTip = ({ onHandleTip, tip, ...props }: SelectTipProps) => {
+const SelectTip = ({ tip, onHandleTip, ...props }: SelectTipProps) => {
   return (
     <>
       <p>Select Tip %</p>

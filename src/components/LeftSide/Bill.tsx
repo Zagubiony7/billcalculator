@@ -1,10 +1,10 @@
+import { type BillProps } from "../../data";
 import Box from "../global/Box";
-import iconDollar from "../../assets/icons/icon-dollar.svg";
-
-const Bill = ({ ...props }) => {
+const Bill = ({ bill, ...props }: BillProps) => {
   return (
-    <Box {...props} icon={iconDollar}>
-      Bill
+    <Box {...props}>
+      <p>Bill</p>
+      {bill ? "" : <p style={{ color: "#f05d5d54" }}>Can't be zero</p>}
     </Box>
   );
 };
