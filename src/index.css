@@ -1,0 +1,219 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Poetsen+One&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Young+Serif&display=swap");
+
+/* - Green 400: hsl(172, 67%, 45%)
+### Neutral
+- Green 900: hsl(183, 100%, 15%)
+- Grey 500: hsl(186, 14%, 43%)
+- Grey 400: hsl(184, 14%, 56%)
+- Grey 200: hsl(185, 41%, 84%)
+- Grey 50: hsl(189, 47%, 97%)
+- White: hsl(0, 100%, 100%) */
+
+:root {
+  --var-default-green: hsl(172, 67%, 45%);
+  --var-dark-green: hsl(183, 100%, 15%);
+  --var-dark-grey: hsl(186, 14%, 43%);
+  --var-medium-grey: hsl(184, 14%, 56%);
+  --var-weak-grey: hsl(185, 41%, 84%);
+  --var-the-weakest-grey: hsl(189, 47%, 97%);
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--var-weak-grey);
+  min-height: 100vh;
+  font-family: "Space Mono";
+  padding: 2rem;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border-radius: 2rem;
+  background-color: #fff;
+  min-height: 26rem;
+  width: 100%;
+}
+
+/* LEFT SIDE */
+.left-side {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+}
+
+menu {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+}
+
+button {
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.left-side .btn-select,
+.custom {
+  border: none;
+  border-radius: 5px;
+  background-color: var(--var-dark-green);
+  padding: 1rem;
+  width: 12rem;
+  color: var(--var-the-weakest-grey);
+  font-weight: bold;
+  font-size: 18px;
+  font-family: "Space Mono";
+}
+.custom {
+  border: none;
+  background-color: var(--var-the-weakest-grey);
+  color: var(--var-dark-green);
+  letter-spacing: 1.5px;
+  text-align: center;
+}
+.custom:focus {
+  outline-color: var(--var-default-green);
+}
+
+.left-side button:hover,
+.btn-select.active {
+  background-color: hsl(172, 78%, 70%);
+  color: var(--var-dark-green);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 1.5rem 0;
+}
+
+input {
+  border: none;
+  border-radius: 0.5rem;
+  background-color: var(--var-the-weakest-grey);
+  padding: 1rem 1.5rem;
+  color: var(--var-dark-green);
+  font-weight: bold;
+  font-size: 2.6rem;
+  font-family: "Space Mono";
+  text-align: end;
+}
+
+input:focus {
+  outline-color: var(--var-default-green);
+}
+
+label,
+.left-side p {
+  color: var(--var-default-green);
+  font-weight: bold;
+  font-size: 1.8rem;
+}
+
+/* RIGHT SIDE */
+.right-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 2rem;
+  border-radius: 2rem;
+  background-color: var(--var-dark-green);
+  padding: 2rem 2.5rem;
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.info-value {
+  display: flex;
+  flex-direction: column;
+}
+.child {
+  color: #fff;
+  font-size: 2.2rem;
+}
+
+.person {
+  color: var(--var-medium-grey);
+  font-size: 1.8rem;
+}
+.price {
+  color: var(--var-default-green);
+  font-weight: bold;
+  font-size: 4.4rem;
+}
+
+.result {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.reset {
+  border: none;
+  border-radius: 1rem;
+  background-color: var(--var-dark-grey);
+  padding: 2rem;
+  color: var(--var-dark-green);
+  font-weight: bold;
+  font-size: 1.8rem;
+}
+
+.reset.active {
+  background-color: var(--var-default-green);
+  color: #fff;
+}
+
+.tip-total {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* RESP */
+@media (max-width: 788px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 409px) {
+  body {
+    padding: 0 10rem;
+    padding-left: 11.5rem;
+  }
+}
+
+@media (max-width: 375px) {
+  body {
+    padding-left: 12rem;
+  }
+}
+
+@media (max-width: 375px) {
+  menu {
+    grid-template-columns: 1fr 1fr;
+  }
+  label {
+    margin-left: 2rem;
+  }
+  .left-side {
+    align-items: center;
+  }
+}
